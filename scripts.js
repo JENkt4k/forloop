@@ -30,19 +30,23 @@ function processJSON(data) {
 }*/
 
 function renderCar(carJson) {
-  const carDiv = document.createElement("div");
-  carDiv.id = "car-div";
+ // const carBody = document.createElement("div");
+  //carBody.classList += "car-body";
+  carDiv = document.createElement("div");
+  carDiv.classList += "car-div";
   const img = document.createElement("img");
   img.src =
     "https://www.tesla.com/sites/default/files/images/model-3/model-3-hero.jpg?2017";
+  img.classList += "card-object";
   const carList = document.createElement("ul");
-  carList.id = "car-list";
+  carList.classList += "car-list";
   for (x in carJson) {
     let li = document.createElement("li");
     li.innerHTML = `${x}: ${carJson[x]}`;
     carList.appendChild(li);
   }
-  //carDiv.appendChild(img);
+  carDiv.appendChild(img);
+  //carBody.appendChild(carList);
   carDiv.appendChild(carList);
   return carDiv; //carList;
 }
