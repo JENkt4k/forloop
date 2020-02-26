@@ -1,0 +1,19 @@
+{
+  "cars" : [
+    {
+      "model" : "Model 3",
+      "make" : "Tesla",
+      "color" : "grey"
+    },
+    {
+      "model" : "Camaro",
+      "make" : "Chevy",
+      "color" : "blue"
+    },
+    {
+      "model" : "Toyota",
+      "make" : "Corolla",
+      "color" : "red"
+    }
+  ]
+}
