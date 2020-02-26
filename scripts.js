@@ -42,7 +42,7 @@ function renderCar(carJson) {
     li.innerHTML = `${x}: ${carJson[x]}`;
     carList.appendChild(li);
   }
-  carDiv.appendChild(img);
+  //carDiv.appendChild(img);
   carDiv.appendChild(carList);
   return carDiv; //carList;
 }
