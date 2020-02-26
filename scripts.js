@@ -11,6 +11,8 @@ function loadJSON(callback) {
   xobj.send(null);
 }
 
+import {default as cars} from './cars.js';
+
 function processJSON(data) {
   const carDiv = document.getElementById("car-collection");
   const carArray = data["cars"];
@@ -19,44 +21,32 @@ function processJSON(data) {
   }
 }
 
-/*function renderCar(carJson) {
-  const carList = document.createElement("ul");
-  for (x in carJson) {
-    let li = document.createElement("li");
-    li.innerHTML = `${x}: ${carJson[x]}`;
-    carList.appendChild(li);
-  }
-  return carList;
-}*/
-
 function renderCar(carJson) {
- // const carBody = document.createElement("div");
-  //carBody.classList += "car-body";
-  carDiv = document.createElement("div");
+  const carDiv = document.createElement("div");
   carDiv.classList += "car-div";
   const img = document.createElement("img");
-  img.src =
-    "https://www.tesla.com/sites/default/files/images/model-3/model-3-hero.jpg?2017";
+  img.src = carJson["src"];
   img.classList += "card-object";
   const carList = document.createElement("ul");
   carList.classList += "car-list";
-  for (x in carJson) {
+  for (let x in carJson) {
     let li = document.createElement("li");
     li.innerHTML = `${x}: ${carJson[x]}`;
     carList.appendChild(li);
   }
   carDiv.appendChild(img);
-  //carBody.appendChild(carList);
   carDiv.appendChild(carList);
-  return carDiv; //carList;
+  return carDiv;
 }
 
 function init() {
-  loadJSON(function(response) {
-    // Parse JSON string into object
-    var actual_JSON = JSON.parse(response);
-    processJSON(actual_JSON);
-  });
+  // loadJSON(function(response) {
+  //   // Parse JSON string into object
+  //   var actual_JSON = JSON.parse(response);
+  //   processJSON(actual_JSON);
+  // });
+  console.log(cars);
+  processJSON(cars);
 }
 
 init();

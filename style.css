@@ -79,8 +79,8 @@ header {
 }
 
 .car-div > img {
-  max-height: 300px;
-  height: 200px;
+  max-width: 300px;
+  width: 200px;
 }
 
 li {
