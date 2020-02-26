@@ -1,17 +1,7 @@
-function loadJSON(callback) {
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open("GET", "cars.json", true); // Replace 'my_data' with the path to your file
-  xobj.onreadystatechange = function() {
-    if (xobj.readyState == 4 && xobj.status == "200") {
-      // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null);
-}
-
-import {default as cars} from './cars.js';
+import {default as cars} from './cars.js'; //if not processed by webpack >2.0
+//import * as cars from './cars.json'; //if processed by webpack >2.0
+// reference: https://stackoverflow.com/questions/33650399/es6-modules-implementation-how-to-load-a-json-file?lq=1
+// https://stackoverflow.com/questions/33650399/es6-modules-implementation-how-to-load-a-json-file?lq=1
 
 function processJSON(data) {
   const carDiv = document.getElementById("car-collection");
@@ -40,11 +30,6 @@ function renderCar(carJson) {
 }
 
 function init() {
-  // loadJSON(function(response) {
-  //   // Parse JSON string into object
-  //   var actual_JSON = JSON.parse(response);
-  //   processJSON(actual_JSON);
-  // });
   console.log(cars);
   processJSON(cars);
 }
