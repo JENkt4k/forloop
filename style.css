@@ -3,6 +3,29 @@ li {
   font-weight: 400;
 }
 
+.car-details {
+  padding-inline-start: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-model {
+  padding-inline-start: 0px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Roboto";
+  background-color: #3f51b5;
+  color: whitesmoke;
+  padding-left:  10px;
+  padding-right: 10px;
+  width: 10em;
+}
+
+.detail {
+  margin: 5px;
+  padding-inline-start: 10px;
+}
+
 html,
 body {
   color: #444;
@@ -50,18 +73,6 @@ header {
   z-index: 1000;
 }
 
-.ul {
-  background: #fff;
-  border-radius: 2px;
-  box-shadow:
-    0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  margin: 16px;
-  padding: 16px;
-  position: relative;
-}
 
 .car-div {
   background: #fff;
@@ -83,9 +94,6 @@ header {
   width: 200px;
 }
 
-li {
-  margin-left: 20px;
-}
 
 h3 {
   height: 20px;
